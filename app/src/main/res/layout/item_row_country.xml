@@ -2,7 +2,6 @@
 <!--TODO all dp's move to style-->
 <!--TODO use include/merge for boilerplate code like dividers and | -->
 <!-- https://developer.android.com/develop/ui/views/layout/improving-layouts/reusing-layouts -->
-<!--TODO move text blocks to res strings -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,7 +19,7 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:ellipsize="none"
-        android:text="----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        android:text="@string/long_divider"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,12 +29,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="|"/>
+            android:text="@string/border_separator"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="|"/>
+            android:text="@string/border_separator"/>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +45,7 @@
             android:id="@+id/tv_item_country_r_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="| "
+            android:text="@string/border_separator_r_space"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,7 +78,7 @@
             android:id="@+id/tv_item_country_l_divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="|"
+            android:text="@string/border_separator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,12 +92,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="|"/>
+            android:text="@string/border_separator"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="|"/>
+            android:text="@string/border_separator"/>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -109,7 +108,7 @@
             android:id="@+id/tv_item_country_r_divider_capital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="| "
+            android:text="@string/border_separator_r_space"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,7 +124,7 @@
             android:id="@+id/tv_item_country_l_divider_capital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="|"
+            android:text="@string/border_separator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -138,12 +137,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="|"/>
+            android:text="@string/border_separator"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="|"/>
+            android:text="@string/border_separator"/>
     </LinearLayout>
 
     <TextView
@@ -151,6 +150,6 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:ellipsize="none"
-        android:text="----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        android:text="@string/long_divider"/>
 
 </LinearLayout>
