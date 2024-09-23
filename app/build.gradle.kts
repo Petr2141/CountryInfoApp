@@ -52,4 +52,5 @@ dependencies {
     implementation(libs.retrofit.kotlin.serialization)
 
     implementation(libs.androidx.tracing.ktx)
+    implementation(libs.androidx.lifecycle.viewModel)
 }
