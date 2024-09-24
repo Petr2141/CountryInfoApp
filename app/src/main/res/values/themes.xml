@@ -6,4 +6,25 @@
     </style>
 
     <style name="Theme.CountryInfoApp" parent="Base.Theme.CountryInfoApp" />
+
+    <!-- START BLOCK Recycler Item -->
+    <style name="RecyclerItemLinearLayout">
+        <item name="android:paddingLeft">@dimen/main_padding</item>
+        <item name="android:paddingRight">@dimen/main_padding</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/sh_row_item_transparent_divider</item>
+    </style>
+
+    <style name="RecyclerItemTextView">
+        <item name="android:textSize">@dimen/main_size_text</item>
+        <item name="android:textColor">@color/main_text_color</item>
+
+    </style>
+
+    <style name="RecyclerItemWrapContTextView" parent="RecyclerItemTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- END BLOCK Recycler Item -->
+
 </resources>

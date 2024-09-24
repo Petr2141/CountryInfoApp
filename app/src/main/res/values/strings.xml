@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Country Info App</string>
+    <string name="long_divider">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</string>
+    <string name="border_separator">|</string>
+    <string name="border_separator_r_space">|\u00A0</string>
     <string name="something_went_wrong">Something went wrong. Check the logs to troubleshoot.</string>
 </resources>
