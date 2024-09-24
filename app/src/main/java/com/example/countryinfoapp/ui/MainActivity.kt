@@ -7,30 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countryinfoapp.R
-import com.example.countryinfoapp.data.COUNTRIES_BASE_URL
-import com.example.countryinfoapp.data.network.retrofit.RetrofitCountriesNetwork
-import com.example.countryinfoapp.data.network.retrofit.okHttpCallFactory
-import com.example.countryinfoapp.data.repository.CountriesRepositoryImpl
 import com.example.countryinfoapp.ui.recyclerview.CountriesAdapter
-import kotlinx.serialization.json.Json
 
 class MainActivity : AppCompatActivity() {
 
     private val countriesViewModel: CountriesViewModel by viewModels {
-        // TODO we need separate classes to manual dependencies, now the UI layer knows about DATA(it is mistake)
-        val json = Json {
-            coerceInputValues = true  // replaces `null` with a default value
-            ignoreUnknownKeys = true  // Ignore unknown fields in JSON
-        }
-
-
-        CountriesViewModelFactory(
-            CountriesRepositoryImpl(
-                RetrofitCountriesNetwork(   json,
-                                            okHttpCallFactory(),
-                                            COUNTRIES_BASE_URL)
-                                            )
-        )
+        CountriesViewModel.Factory
     }
 
     private lateinit var countriesAdapter: CountriesAdapter

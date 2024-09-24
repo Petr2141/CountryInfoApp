@@ -4,7 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.countryinfoapp.CountriesApplication
 import com.example.countryinfoapp.data.network.model.NetworkCountries
 import com.example.countryinfoapp.data.repository.CountriesRepository
 import com.example.countryinfoapp.model.Country
@@ -15,6 +19,7 @@ class CountriesViewModel(
 ) : ViewModel() {
 
     private val _countries = MutableLiveData<List<NetworkCountries>>()
+    //TODO Remove LiveData
     val countries: LiveData<List<NetworkCountries>> = _countries
 
     init {
@@ -28,6 +33,16 @@ class CountriesViewModel(
             }
         }
     }
+
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val application = (this[APPLICATION_KEY] as CountriesApplication)
+                val countriesRepository = application.container.countriesRepository
+                CountriesViewModel(repository = countriesRepository)
+            }
+        }
+    }
 }
 
 // TODO add UiState to this app?
@@ -35,16 +50,4 @@ sealed interface MainActivityUiState {
     data object Loading : MainActivityUiState
     data class  Success(val countries: List<Country>) : MainActivityUiState
     data class  Error(val throwable: Throwable) : MainActivityUiState
-}
-
-
-class CountriesViewModelFactory(private val repository: CountriesRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(CountriesViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return CountriesViewModel(repository) as T
-        }
-        // TODO add catch Exception
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
 }
