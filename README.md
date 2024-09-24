@@ -26,7 +26,7 @@ In addition to the code itself, there are a number of other factors that contrib
 
 | Status | Task                                                                                                                                                                              |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🚀     | **[[Git_Flow_Strategy]]**: Implemented a branching strategy to manage feature development and releases.                                                                           |
+| 🚀     | **[Git Flow Strategy](Git_Flow_Strategy)**: Implemented a branching strategy to manage feature development and releases.                                                          |
 | 🚀     | **Unit and Instrumented Tests**: Developed unit tests and instrumented tests to ensure code quality and functionality.                                                            |
 | 🚀     | **Well-structured XML Layouts**: Created clean XML layouts with resources organized in separate files for maintainability and responsive design.                                  |
 | 🚀     | **Support for Configuration Changes**: Implemented support for handling device rotation and other configuration changes gracefully.                                               |
@@ -54,7 +54,7 @@ In addition to the code itself, there are a number of other factors that contrib
 
 ### Architecture
 MVVM + clean architecture
-![[Pasted image 20240917115216.png|350]]
+![Pasted image 20240917115216.png|300](Pasted_image_20240917115216.png)
 
 | Layer  | Class                                             |
 | ------ | ------------------------------------------------- |
@@ -74,20 +74,20 @@ Since this is a minimal project scope, I chose not to use external libraries (su
 ### About the Layout Design and Implementation
 
 At first glance, this design may seem purely schematic and may not require exact reproduction. However, a closer inspection reveals a real challenge. To begin, I sketched out a few solutions on paper—this was one of the initial steps in visualizing the concept. Here's a screenshot of my notes:
-![[scatch.jpg|400]]
+![scatch.jpg|400](scatch.jpg)
 
 In a real project, we would likely adhere to industry guidelines from Google: [Material Design](https://m3.material.io/). We would be particularly focused on responsiveness, expected user behavior, and what is commonly referred to as UX (User Experience).
 
 However, in this case, we are implementing the design exactly as specified in the assignment:
-![[Pasted image 20240923183525.png]]
+![Pasted image 20240923183525.png](Pasted_image_20240923183525.png)
 
 During the implementation, I paid attention to several aspects:
 
-| Aspect                 | Importance                                                                                     | Commit                                   |
-|-----------------------|------------------------------------------------------------------------------------------------|------------------------------------------|
-| Styles, Colors, Dimensions | For reusability, maintaining a consistent app style, and simplifying the implementation of a dark theme, etc. | e6c03efc2cf42b03744f6e1966f12d1c6204663a |
-| Include / Merge       | For reusability                                                                                 | c0e1f6f90b9fa8b9b13c1bec18fbadbab872c2bd |
-| String Resources      | For reusability and simplifying localization implementation                                      | 8336cac39324bc6ecea2cd2e8bc3ca3b4bd47a12 |
+| Aspect                     | Importance                                                                                                    | Commit                                                                                                                                 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Styles, Colors, Dimensions | For reusability, maintaining a consistent app style, and simplifying the implementation of a dark theme, etc. | [e6c03efc2cf42b03744f6e1966f12d1c6204663a](https://github.com/Petr2141/CountryInfoApp/commit/e6c03efc2cf42b03744f6e1966f12d1c6204663a) |
+| Include / Merge            | For reusability                                                                                               | [c0e1f6f90b9fa8b9b13c1bec18fbadbab872c2bd](https://github.com/Petr2141/CountryInfoApp/commit/c0e1f6f90b9fa8b9b13c1bec18fbadbab872c2bd) |
+| String Resources           | For reusability and simplifying localization implementation                                                   | [8336cac39324bc6ecea2cd2e8bc3ca3b4bd47a12](https://github.com/Petr2141/CountryInfoApp/commit/8336cac39324bc6ecea2cd2e8bc3ca3b4bd47a12) |
 
 ---
 ## Contact Information
