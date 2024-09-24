@@ -10,18 +10,11 @@ interface CountriesRepository {
     val countries: Flow<List<NetworkCountries>>
 }
 
-//TODO create file for CountriesRepositoryImpl
 class CountriesRepositoryImpl(
     private val networkDataSource: CountriesNetworkDataSource
 ) : CountriesRepository {
     override val countries: Flow<List<NetworkCountries>> = flow {
-        try {
-            val countriesList = networkDataSource.getCountries()
-            emit(countriesList)
-        } catch (e: Exception) {
-            //TODO make better error
-            Log.e("CountriesRepositoryImpl", e.toString())
-            emit(emptyList())
-        }
+        val countriesList = networkDataSource.getCountries()
+        emit(countriesList)
     }
 }
