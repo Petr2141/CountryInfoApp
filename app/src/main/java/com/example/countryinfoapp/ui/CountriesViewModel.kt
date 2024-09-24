@@ -9,6 +9,9 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.countryinfoapp.CountriesApplication
 import com.example.countryinfoapp.data.network.model.NetworkCountries
 import com.example.countryinfoapp.data.repository.CountriesRepository
+import com.example.countryinfoapp.domain.CountriesSortField
+import com.example.countryinfoapp.domain.GetSortCountriesUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -26,10 +29,11 @@ class CountriesViewModel(
     }
 
     private fun loadCountries() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Default) {
             try {
-                repository.countries.collect { countriesList ->
-                    uiState.value = MainActivityUiState.Success(countriesList)
+                GetSortCountriesUseCase(repository)(CountriesSortField.Region)
+                    .collect { countriesList ->
+                        uiState.value = MainActivityUiState.Success(countriesList)
                 }
             } catch (e: Throwable) {
                 uiState.value = MainActivityUiState.Error(e)

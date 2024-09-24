@@ -13,7 +13,7 @@ class GetSortCountriesUseCase constructor(
             when (sortBy) {
                 CountriesSortField.Capital       -> countries.sortedBy { it.capital }
                 CountriesSortField.CountriesName -> countries.sortedBy { it.name }
-                CountriesSortField.CurrencyName  -> countries.sortedBy { it.currency.name }
+                CountriesSortField.Region        -> countries.sortedBy { it.region }
                 CountriesSortField.LanguageName  -> countries.sortedBy { it.language.name }
             }
         }
@@ -22,6 +22,6 @@ class GetSortCountriesUseCase constructor(
 sealed class CountriesSortField {
     data object CountriesName : CountriesSortField()
     data object Capital : CountriesSortField()
-    data object CurrencyName : CountriesSortField()
+    data object Region : CountriesSortField()
     data object LanguageName : CountriesSortField()
 }
