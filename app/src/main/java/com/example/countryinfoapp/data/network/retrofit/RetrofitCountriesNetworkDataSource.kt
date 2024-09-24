@@ -10,10 +10,10 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import androidx.tracing.trace
+import com.google.android.apps.common.testing.accessibility.framework.BuildConfig
 
 
-// TODO maybe need rename, because it is DataSource
-internal class RetrofitCountriesNetwork constructor(
+internal class RetrofitCountriesNetworkDataSource constructor(
     networkJson: Json,
     okhttpCallFactory: Call.Factory,
     baseUrl: String
@@ -38,10 +38,9 @@ fun okHttpCallFactory(): Call.Factory = trace("CountriesOkHttpClient") {
         .addInterceptor(
             HttpLoggingInterceptor()
                 .apply {
-                    // TODO() add BuildConfig
-                    //if (BuildConfig.DEBUG) {
-                    setLevel(HttpLoggingInterceptor.Level.BODY)
-                    //}
+                    if (BuildConfig.DEBUG) {
+                        setLevel(HttpLoggingInterceptor.Level.BODY)
+                    }
                 },
         )
         .build()
