@@ -1,6 +1,6 @@
 # Country Info App
 
-This project implements the assigned task [[pdf]]
+This project implements [the assigned task](HW-CODING_ASSIGNMENT.pdf).
 
 ### Required (Tested only on this version)
 
@@ -26,7 +26,7 @@ In addition to the code itself, there are a number of other factors that contrib
 
 | Status | Task                                                                                                                                                                              |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🚀     | **Git Flow Strategy**: Implemented a branching strategy to manage feature development and releases.                                                                               |
+| 🚀     | **[[Git_Flow_Strategy]]**: Implemented a branching strategy to manage feature development and releases.                                                                           |
 | 🚀     | **Unit and Instrumented Tests**: Developed unit tests and instrumented tests to ensure code quality and functionality.                                                            |
 | 🚀     | **Well-structured XML Layouts**: Created clean XML layouts with resources organized in separate files for maintainability and responsive design.                                  |
 | 🚀     | **Support for Configuration Changes**: Implemented support for handling device rotation and other configuration changes gracefully.                                               |
@@ -74,8 +74,7 @@ Since this is a minimal project scope, I chose not to use external libraries (su
 ### About the Layout Design and Implementation
 
 At first glance, this design may seem purely schematic and may not require exact reproduction. However, a closer inspection reveals a real challenge. To begin, I sketched out a few solutions on paper—this was one of the initial steps in visualizing the concept. Here's a screenshot of my notes:
-
-(Add a screenshot of your paper notes here)
+![[scatch.jpg|400]]
 
 In a real project, we would likely adhere to industry guidelines from Google: [Material Design](https://m3.material.io/). We would be particularly focused on responsiveness, expected user behavior, and what is commonly referred to as UX (User Experience).
 
@@ -98,5 +97,6 @@ If you have any questions or would like to get in touch, feel free to contact me
 - **GitHub**: [Petr2141](https://github.com/Petr2141)
 - **Email**: [petr2141@gmail.com](mailto:petr2141@gmail.com)
 - **LinkedIn**: [linkedin.com/in/peter-sulilo](https://www.linkedin.com/in/peter-sulilo)
+- **CV**: [Peter Sulilo - Senior Software Engineer CV](Peter_Sulilo_CV_Senior_Software_Engineer.pdf)
 
 I'm open to feedback, suggestions, or collaboration opportunities.
