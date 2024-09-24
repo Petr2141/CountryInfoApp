@@ -14,7 +14,6 @@ import com.example.countryinfoapp.data.network.model.NetworkCountries
 import com.example.countryinfoapp.ui.recyclerview.CountriesAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
-import okhttp3.internal.notifyAll
 
 class MainActivity : AppCompatActivity() {
     private val progressBar by lazy {
@@ -54,14 +53,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showCountries(countriesList: List<NetworkCountries>) {
-        Log.d("main", "Countries list size = " + countriesList.size)
-        hideLoading()
+        if (countriesList.isEmpty()) {
+            Log.e(this.javaClass.name, "Countries list is empty.")
+            showError(Throwable("Countries list is empty."))
+            return
+        }
         val countriesAdapter = CountriesAdapter(countriesList)
         initRecyclerView(countriesAdapter)
+        hideLoading()
     }
 
     private fun showError(error: Throwable) {
-        Snackbar.make(findViewById(R.id.main), "Error: ${error.message}", Snackbar.LENGTH_LONG).show()
+        // System errors in logs
+        Log.e(this.javaClass.name, "Error occurred: ${error.message}", error)
+        // Only localized errors can be in the UI
+        Snackbar.make(findViewById(R.id.main), R.string.something_went_wrong, Snackbar.LENGTH_LONG).show()
         hideLoading()
     }
 
