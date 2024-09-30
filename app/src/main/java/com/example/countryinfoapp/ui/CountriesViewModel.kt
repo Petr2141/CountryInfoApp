@@ -7,10 +7,11 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.countryinfoapp.CountriesApplication
-import com.example.countryinfoapp.data.network.model.NetworkCountries
 import com.example.countryinfoapp.data.repository.CountriesRepository
 import com.example.countryinfoapp.domain.CountriesSortField
 import com.example.countryinfoapp.domain.GetSortCountriesUseCase
+import com.example.countryinfoapp.ui.adapter.CountryUIModelAdapter
+import com.example.countryinfoapp.ui.adapter.CountryUIModelInterface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -23,7 +24,6 @@ class CountriesViewModel(
     private val uiState = MutableStateFlow<MainActivityUiState>(MainActivityUiState.Loading)
     public val getUiState: StateFlow<MainActivityUiState> = uiState
 
-
     init {
         loadCountries()
     }
@@ -33,7 +33,9 @@ class CountriesViewModel(
             try {
                 GetSortCountriesUseCase(repository)(CountriesSortField.Region)
                     .collect { countriesList ->
-                        uiState.value = MainActivityUiState.Success(countriesList)
+                        uiState.value = MainActivityUiState
+                            .Success( countriesList
+                                .map { CountryUIModelAdapter (it) })
                 }
             } catch (e: Throwable) {
                 uiState.value = MainActivityUiState.Error(e)
@@ -54,6 +56,6 @@ class CountriesViewModel(
 
 sealed interface MainActivityUiState {
     data object Loading : MainActivityUiState
-    data class  Success(val countries: List<NetworkCountries>) : MainActivityUiState
+    data class  Success(val countries: List<CountryUIModelInterface>) : MainActivityUiState
     data class  Error(val throwable: Throwable) : MainActivityUiState
 }

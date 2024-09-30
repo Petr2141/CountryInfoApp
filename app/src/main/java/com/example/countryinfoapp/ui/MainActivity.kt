@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countryinfoapp.R
-import com.example.countryinfoapp.data.network.model.NetworkCountries
+import com.example.countryinfoapp.ui.adapter.CountryUIModelInterface
 import com.example.countryinfoapp.ui.recyclerview.CountriesAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.visibility = View.VISIBLE
     }
 
-    private fun showCountries(countriesList: List<NetworkCountries>) {
+    private fun showCountries(countriesList: List<CountryUIModelInterface>) {
         if (countriesList.isEmpty()) {
             Log.e(this.javaClass.name, "Countries list is empty.")
             showError(Throwable("Countries list is empty."))

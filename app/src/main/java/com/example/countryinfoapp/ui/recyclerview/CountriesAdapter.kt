@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countryinfoapp.R
-import com.example.countryinfoapp.data.network.model.NetworkCountries
+import com.example.countryinfoapp.ui.adapter.CountryUIModelInterface
 
-class CountriesAdapter(private val dataSet: List<NetworkCountries> ) :
+class CountriesAdapter(private val dataSet: List<CountryUIModelInterface> ) :
     RecyclerView.Adapter<CountryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
