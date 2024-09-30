@@ -16,14 +16,14 @@ class GetSortCountriesUseCase constructor(
     operator fun invoke(sortBy: CountriesSortField = CountriesName): Flow<List<CountryDomainModelInterface>> =
         countriesRepository.countries.transform { countries ->
             val adapterCountries = countries.map { CountryDataModelAdapter(it) }
-            with (adapterCountries) {
-                when (sortBy) {
-                    CountriesName -> sortedBy { it.name }
-                    LanguageName -> sortedBy { it.name }
-                    Region -> sortedBy { it.region }
-                    Capital -> sortedBy { it.capital }
-                }
-            }
+            emit ( with (adapterCountries) {
+                        when (sortBy) {
+                            CountriesName -> sortedBy { it.name }
+                            LanguageName -> sortedBy { it.name }
+                            Region -> sortedBy { it.region }
+                            Capital -> sortedBy { it.capital }
+                        }
+            })
         }
 }
 
