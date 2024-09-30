@@ -2,7 +2,7 @@ package com.example.countryinfoapp.data.adapter
 
 import com.example.countryinfoapp.data.local.database.model.CountryEntity
 
-class CountryDataEntityAdapter (
+data class CountryDataEntityAdapter (
     private val entity: CountryEntity
 ) : CountryDataModelInterface {
     override val name: String

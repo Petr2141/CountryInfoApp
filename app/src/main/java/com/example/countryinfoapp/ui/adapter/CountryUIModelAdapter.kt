@@ -2,7 +2,7 @@ package com.example.countryinfoapp.ui.adapter
 
 import com.example.countryinfoapp.domain.adapter.CountryDomainModelInterface
 
-class CountryUIModelAdapter (
+data class CountryUIModelAdapter (
     private val countryDomainModel : CountryDomainModelInterface
 ) : CountryUIModelInterface {
     override val name: String
@@ -13,5 +13,4 @@ class CountryUIModelAdapter (
         get() = countryDomainModel.code
     override val capital: String
         get() = countryDomainModel.capital
-
 }

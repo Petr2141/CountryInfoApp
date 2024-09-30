@@ -2,7 +2,7 @@ package com.example.countryinfoapp.domain.adapter
 
 import com.example.countryinfoapp.data.adapter.CountryDataModelInterface
 
-class CountryDataModelAdapter (
+data class CountryDataModelAdapter (
     private val countryDataModel : CountryDataModelInterface
 ) : CountryDomainModelInterface {
     override val name: String

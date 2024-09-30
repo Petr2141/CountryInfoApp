@@ -2,7 +2,7 @@ package com.example.countryinfoapp.data.adapter
 
 import com.example.countryinfoapp.data.network.model.NetworkCountries
 
-class NetworkCountryDataAdapter (
+data class NetworkCountryDataAdapter (
     private val networkCountry: NetworkCountries
 ) : CountryDataModelInterface {
     override val name: String
