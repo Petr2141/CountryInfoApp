@@ -27,9 +27,13 @@ class MainActivity : AppCompatActivity() {
         CountriesViewModel.Factory
     }
 
+    private val countriesAdapter = CountriesAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        initRecyclerView(countriesAdapter)
 
         lifecycleScope.launch {
             countriesViewModel.getUiState.collect { uiState ->
@@ -58,8 +62,7 @@ class MainActivity : AppCompatActivity() {
             showError(Throwable("Countries list is empty."))
             return
         }
-        val countriesAdapter = CountriesAdapter(countriesList)
-        initRecyclerView(countriesAdapter)
+        countriesAdapter.updateCountries(countriesList)
         hideLoading()
     }
 
