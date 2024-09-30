@@ -1,5 +1,6 @@
 package com.example.countryinfoapp.data.adapter
 
+import com.example.countryinfoapp.data.local.database.model.CountryEntity
 import com.example.countryinfoapp.data.network.model.NetworkCountries
 
 data class NetworkCountryDataAdapter (
@@ -14,3 +15,10 @@ data class NetworkCountryDataAdapter (
     override val capital: String
         get() = networkCountry.capital
 }
+
+fun NetworkCountryDataAdapter.asCountryEntity() = CountryEntity(
+    name = name,
+    region = region,
+    code = code,
+    capital = capital
+)
