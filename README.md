@@ -25,13 +25,13 @@ git clone https://github.com/Petr2141/CountryInfoApp.git
 In addition to the code itself, there are a number of other factors that contribute to the overall quality of the product:
 
 | Status | Task                                                                                                                                                                              |
-| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🚀     | **[Git Flow Strategy](Git_Flow_Strategy)**: Implemented a branching strategy to manage feature development and releases.                                                          |
+|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 🚀     | **[Git Flow Strategy](Git_Flow_Strategy.md)**: Implemented a branching strategy to manage feature development and releases.                                                       |
 | 🚀     | **Unit and Instrumented Tests**: Developed unit tests and instrumented tests to ensure code quality and functionality.                                                            |
 | 🚀     | **Well-structured XML Layouts**: Created clean XML layouts with resources organized in separate files for maintainability and responsive design.                                  |
 | 🚀     | **Support for Configuration Changes**: Implemented support for handling device rotation and other configuration changes gracefully.                                               |
 | 🚀     | **Documentation**: Comprehensive documentation has been created (like this page) to assist users and developers.                                                                  |
-| TODO   | **Add ROOM Database**: Plan to implement a ROOM database for caching and a local data source to enhance data management and offline capabilities.                                 |
+| 🚀     | **Add ROOM Database**: Plan to implement a ROOM database for caching and a local data source to enhance data management and offline capabilities.                                 |
 | TODO   | **Detailed Code Comments**: Plan to add thorough comments throughout the code for better understanding and maintainability.                                                       |
 | TODO   | **Support for Tablets and TVs**: Plan to enhance the app's design and functionality for tablet and TV compatibility.                                                              |
 | TODO   | **Naming Conventions**: Plan to establish and follow consistent naming conventions throughout the codebase.                                                                       |
