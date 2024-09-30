@@ -1,8 +1,6 @@
 package com.example.countryinfoapp.data
 
 import android.content.Context
-import androidx.room.DeleteTable
-import com.example.countryinfoapp.data.local.database.CountriesDataBaseDataSource
 import com.example.countryinfoapp.data.network.retrofit.RetrofitCountriesNetworkDataSource
 import com.example.countryinfoapp.data.network.retrofit.okHttpCallFactory
 import com.example.countryinfoapp.data.repository.CountriesRepository
@@ -30,12 +28,9 @@ class DataAppContainer(context: Context) : AppContainer {
         RetrofitCountriesNetworkDataSource(json, okHttpCallFactory(), countriesBaseUrl)
 
     private val databaseDataSource =
-        DatabaseProvider.getDatabase(context).сountriesDataBaseDataSource()
+        DatabaseProvider.getDatabase(context).countriesDataBaseDataSource()
 
     override val countriesRepository: CountriesRepository by lazy {
-         /* If we add a local database in the future,
-          * we can update CountriesRepositoryImpl to take both netDataSource
-          * and DataBaseDataSource, and handle the business logic in CountriesRepositoryImpl.*/
         CountriesRepositoryImpl(netDataSource, databaseDataSource)
     }
 
